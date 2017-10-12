@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./resources/sass/bootstrap-variables";
+@import "./node_modules/bootstrap/scss/reboot";
+@import "./node_modules/bootstrap/scss/print";
+@import "./node_modules/bootstrap/scss/type";
+@import "./node_modules/bootstrap/scss/images";
+@import "./node_modules/bootstrap/scss/grid";
+@import "./node_modules/bootstrap/scss/forms";
+@import "./node_modules/bootstrap/scss/input-group";
+@import "./node_modules/bootstrap/scss/buttons";
+@import "./node_modules/bootstrap/scss/breadcrumb";
+@import "./node_modules/bootstrap/scss/card";
+@import "./node_modules/bootstrap/scss/utilities";
+
+@import "bourbon";
+
+// EBM variables
+@import "./resources/sass/ebm-variables";
+@import "./node_modules/ebm/functions/ebm-functions";
+@import "./node_modules/ebm/helpers/ebm-helpers";
+@import "./resources/sass/ebm-fonts-setup";
+@import "./resources/sass/ebm-fonts";
+@import "./resources/sass/ebm-bootstrap-overrides";
+@import "./node_modules/ebm/control/ebm-text-responsive-control";
+@import "./node_modules/ebm/elements/ebm-grid-lists";
+@import "./node_modules/ebm/elements/ebm-icons";
+@import "./node_modules/ebm/control/ebm-container-control";
+@import "./resources/sass/ebm-overrides";
+@import "./resources/sass/ebm-global";
+@import "./node_modules/ebm/modules/ebm-header"; 
+
+a.btn {
+  text-decoration: none;
+}
+
+.hero {
+  > .container {
+    @include flex-column;
+    padding: get-spacer(5) 0;
+    min-height: 60vh;
+  }
+  .event-title {
+    @include bold;
+  }
+  .footer {
+    margin-top: auto;
+  }
+}
+
+.checkout {
+  background-color: $gray-100;
+  padding: get-spacer(5) 0;
+  min-height: 100vh;
+}
+
+.tickets-list-wrapper,
+.ticket-zone-wrapper {
+  min-height: 90vh;
+}
+
+.tickets-list-wrapper {
+  border-radius: $border-radius;
+  background-color: $gray-200;
+  padding: get-spacer(2);
+  .tickets-list {
+  }
+  .ticket {
+    @include flex-column-space-between;
+    border-radius: $border-radius;
+    margin-bottom: get-spacer(3);
+    background-color: white;
+    padding: get-spacer(2);
+    min-height: 160px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.highlight {
+      .top,
+      .center {
+        color: white;
+      }
+    }
+    .top {
+      @include normalize-text;
+    }
+    .center {}
+    .bottom {
+      @include flex-row-space-between;
+      @include normalize-text;
+      border-radius: $border-radius;
+      background-color: $gray-100;
+      padding: get-spacer(2);
+    }
+    .color-bar {
+      @include flex-row-end;
+      padding: get-spacer(1) 0;
+      text-align: right;
+      &:after {
+        border-radius: $border-radius-lg;
+        background-color: $red;
+        display: block;
+        content: '';
+        width: 21px;
+        height: 5px;
+      } 
+    }
+    .title {
+      @include bold;
+    }
+    .date-wrapper {
+      @include normalize-text;
+      padding: get-spacer(3) 0;
+      .date {}
+      .time {}
+    }
+    .cta {
+      @include flex-column-end;
+      width: 40%;
+    }
+    .price {
+      width: 60%;
+      .value {
+        @include bold;
+        display: block;
+      }
+      .price-description {
+      }
+    }
+  }
+}
+
+.ticket-zone-wrapper {
+  background-color: white;
+  padding: get-spacer(3);
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  [class^="zone-"] {
+    &:hover {
+      cursor: pointer; 
+    }
+  }
+}
+
+
+
+
+
+
+
+
