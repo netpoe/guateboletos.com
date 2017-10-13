@@ -19,7 +19,9 @@ Route::get('/', function () {
  * FRONT EVENTS
  */
 Route::group(['namespace' => 'Front'], function(){
+    Route::post('/evento/{event}/checkout', 'EventsController@checkout')->name('front.events.checkout');
     Route::get('/evento/{event}', 'EventsController@show')->name('front.events.show');
+    Route::get('/evento/{event}/confirmacion', 'EventsController@paymentConfirmation')->name('front.events.payment-confirmation');
     Route::get('/evento/{event}/lugares', 'EventsController@seatSelection')->name('front.events.seat-selection');
 });
 

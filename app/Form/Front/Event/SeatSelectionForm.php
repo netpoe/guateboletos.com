@@ -39,6 +39,37 @@ class SeatSelectionForm extends AbstractBaseForm
             ->setHint('70 boletos disponibles para la fecha que seleccionaste')
             ->setValue(1);
 
+        $this->addField('email')
+            ->setType(Field::TYPE_TEXT)
+            ->setPlaceholder('personachilera@correo.com')
+            ->setLabel('¿A qué correo enviamos tus boletos?');
+
+        $this->addField('name')
+            ->setType(Field::TYPE_TEXT)
+            ->setLabel('Tu nombre como aparece en la tarjeta');
+
+        $this->addField('credit_card_number')
+            ->setType(Field::TYPE_TEXT)
+            ->setPlaceholder('XXXX XXXX XXXX XXXX')
+            ->setLabel('Número de tu tarjeta')
+            ->setHint('deben ser 16 dígitos');
+
+        $this->addField('cvv')
+            ->setType(Field::TYPE_TEXT)
+            ->setLabel('Código de seguridad')
+            ->setPlaceholder('CVV')
+            ->setHint('son 3 dígitos que aparecen detrás de tu tarjeta');
+
+        $this->addField('expiration_year')
+            ->setType(Field::TYPE_TEXT)
+            ->setLabel('Año de expiración')
+            ->setPlaceholder('YY');
+
+        $this->addField('expiration_month')
+            ->setType(Field::TYPE_TEXT)
+            ->setLabel('Mes de expiración')
+            ->setPlaceholder('MM');
+
         return $this;
     }
 

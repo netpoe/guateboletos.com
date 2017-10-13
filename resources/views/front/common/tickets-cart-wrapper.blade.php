@@ -47,7 +47,7 @@
     </div>
     <div class="hr"></div>
     <div class="cta">
-      <a href="#checkout" class="btn btn-info btn-block btn-lg">Continuar</a>
+      {!! $callToAction !!}
     </div>
   </div>
 </div>

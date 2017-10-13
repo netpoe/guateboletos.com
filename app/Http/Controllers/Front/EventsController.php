@@ -23,4 +23,20 @@ class EventsController extends Controller
         
         return view('front.events.seat-selection', $params);
     }
+
+    public function checkout($event)
+    {
+        $params = compact('event');
+
+        // TODO Send email
+
+        return redirect()->route('front.events.payment-confirmation', $params);
+    }
+
+    public function paymentConfirmation($event)
+    {
+        $params = compact('event');
+
+        return view('front.events.payment-confirmation', $params);
+    }
 }
